@@ -8,7 +8,7 @@ screen = pygame.display.set_mode(size)
 
 pygame.init()
     
-stageData = gameLogic.StageData()
+stageData = gameLogic.getStageData()
 inputData = {"grab": False, "run": True}
 
 run = True
@@ -20,12 +20,12 @@ while run:
     inputData = inputHandling.handleInput(inputData)
     run = inputData["run"]
 
-    if len(stageData.candy) <= 0:
+    if len(stageData["candy"]) <= 0:
         run = False
-    elif stageData.mainCh.pos[0] < 0 or stageData.mainCh.pos[0] > size[0] or stageData.mainCh.pos[1]>size[1]:
+    elif stageData["mainCh"].pos[0] < 0 or stageData["mainCh"].pos[0] > size[0] or stageData["mainCh"].pos[1]>size[1]:
         run = False
     #GAMELOGIC
-    stageData.update(inputData)
+    gameLogic.updateStageData(inputData, stageData)
     #DRAWING CODE
     screen.fill((0,0,0))
     graphics.draw(screen, stageData)
