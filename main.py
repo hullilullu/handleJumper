@@ -4,7 +4,7 @@ import gameLogic
 import graphics
 
 size = (700,500)
-screen = pygame.display.set_mode(size)
+screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
 
 pygame.init()
     
