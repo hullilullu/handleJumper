@@ -1,17 +1,17 @@
 import math
-from gameObjects import *
+import gameObjects as go
 
 #TEST
 
 def getStageData():
     returnHash = {}
-    returnHash["mainCh"] = MainCharacter([200, 100])
-    returnHash["handles"] = [Handle(300,300,30), Handle(200,200, 40), Handle(200,300,20),
-                        Handle(100,100,30), Handle(550,350, 10, 1, 0.14), Handle(40,180,20,2,0.15),
-                        Handle(400,70,25,0.1,0.05), Handle(200,200, 40, 0, 0.07), Handle(350,250,10),
-                        Handle(500,200,38,1,0.045),Handle(650,300,38,1,0.03),Handle(570,300,38,1,0.06),
-                        Handle(430, 256, 19)]
-    returnHash["candy"] = [Candy(0,[350, 50]),Candy(0,[200, 50]),Candy(0,[600, 150])]
+    returnHash["mainCh"] = go.MainCharacter([200, 100])
+    returnHash["handles"] = [go.Handle(300,300,30), go.Handle(200,200, 40), go.Handle(200,300,20),
+                        go.Handle(100,100,30), go.Handle(550,350, 10, 1, 0.14), go.Handle(40,180,20,2,0.15),
+                        go.Handle(400,70,25,0.1,0.05), go.Handle(200,200, 40, 0, 0.07), go.Handle(350,250,10),
+                        go.Handle(500,200,38,1,0.045),go.Handle(650,300,38,1,0.03),go.Handle(570,300,38,1,0.06),
+                        go.Handle(430, 256, 19)]
+    returnHash["candy"] = [go.Candy(0,[350, 50]),go.Candy(0,[200, 50]),go.Candy(0,[600, 150])]
     return returnHash
 
 def updateStageData(inputData, stageData):
